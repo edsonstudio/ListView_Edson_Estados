@@ -33,9 +33,10 @@ namespace ListView_Edson_Estados
             var estado = e.SelectedItem as Estados;
             DisplayAlert($"Estado: {estado.Nome}", $"Capital: {estado.Capital}", "Ok");
         }
-        public void Handle_ItemTapped(object sender, ItemTappedEventArgs e)
+        public void Click_Detalhes(object sender, EventArgs e)
         {
-            var estado = e.Item as Estados;
+            var button = sender as Button;
+            var estado = button.BindingContext as Estados;
             DisplayAlert($"Estado: {estado.Nome}", $"Capital: {estado.Capital}", "Ok");
         }
 
