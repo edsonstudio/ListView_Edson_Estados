@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="ListView_Edson_Estados.MainPage"
+             Title="Estados Brasileiros">
+    
+    <ListView x:Name="lista" HasUnevenRows="True" ItemSelected="Handle_ItemSelected" ItemTapped="Handle_ItemTapped">
+        <ListView.Header>
+            <StackLayout Padding="5">
+                <Image Source="br.png"/>
+                <Label Text="Estados brasileiros" TextColor="Blue" FontSize="Large" HorizontalTextAlignment="Center"/>
+            </StackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal" Padding="5">
+                        <Image Source="{Binding ImagemUrl}"/>
+                        <StackLayout HorizontalOptions="StartAndExpand">
+                            <Label Text="{Binding Nome}" TextColor="Black"/>
+                            <Label Text="{Binding Capital}" TextColor="Gray"/>
+                        </StackLayout>
+                        <Button BackgroundColor="White" TextColor="Blue" Text="Detalhes" FontAttributes="Italic"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+        <ListView.Footer>
+            <StackLayout Padding="5">
+                <Image Source="eu.png" HorizontalOptions="Start" VerticalOptions="End" Margin="0,40,0,0"/>
+                <Label Text="Edson Costa Carneiro da Silva" Margin="0,0,0,20"/>
+                <Image Source="senai.png"/>
+                <Label Text="Curso Técnico em Desenvolvimento de Sistemas" HorizontalOptions="Center"/>
+                <Label Text="Turma - 2ND" HorizontalOptions="Center"/>
+            </StackLayout>
+        </ListView.Footer>
+    </ListView>
+
+</ContentPage>
